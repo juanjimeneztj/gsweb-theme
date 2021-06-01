@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 get_header();?>
 
-<main class="main-content">
+<main class="main-content" data-theme="<?=get_option('gsweb_theme')?>" data-primary="<?=get_option('gsweb_primary_color')?>" data-secondary="<?=get_option('gsweb_secondary_color')?>">
 
     <?php if (have_posts()) :
 
