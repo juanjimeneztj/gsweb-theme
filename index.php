@@ -3,36 +3,27 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 get_header();?>
 
-<main class="main-content" data-theme="<?=get_option('gsweb_theme')?>" data-primary="<?=get_option('gsweb_primary_color')?>" data-secondary="<?=get_option('gsweb_secondary_color')?>">
-
-    <?php if (have_posts()) :
-
-        while (have_posts()) : the_post();?>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9">
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            <?php 
+                if (have_posts()) :
+                    while (have_posts()) : the_post();
+            ?>
                         <article id="post-<?php the_ID();?>" <?php post_class();?>>
                             <h1><?php the_title();?></h1>
-
                             <div class="entry-content">
                                 <?php the_content();?>
-                            </div><!-- entry-content -->
+                            </div>
                         </article>
-                    </div>
-
-                    <div class="col-md-3">
-                        <aside class="sidebar">
-                            <?php get_sidebar();?>
-                        </aside>
-                    </div>
-                </div><!-- row -->
-            </div><!-- container -->
-
-        <?php endwhile;
-    endif;?>
-
-</main>
-
+            <?php 
+                    endwhile;
+                endif;
+            ?>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer();
