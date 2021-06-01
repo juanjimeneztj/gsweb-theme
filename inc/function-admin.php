@@ -33,15 +33,18 @@ function gsweb_custom_settings(){
     add_settings_field( 'gsweb-sidebar-theme' , 'Default Theme:' , 'gsweb_settings_theme' , 'gsweb' , 'gsweb-settings-options' );
 }
 
-// sidebar page to get field name options for gsweb theme
+// main funciton to get field options for gsweb theme
+// Option to save the primary Color
 function gsweb_settings_color(){
     $promaryColor = esc_attr( get_option( 'gsweb_primary_color' ) );
     echo '<input type="color" name="gsweb_primary_color" class="form-control w-25 p-0" style="width:30px!important;height:30px!important;cursor:pointer;border: 3px solid #07A6BB!important;" '.(is_null($promaryColor)?'':' value="' . $promaryColor .'" ').' />';
 }
+// Option to save the secondary Color
 function gsweb_settings_color_secondary(){
     $secondaryColor = esc_attr( get_option( 'gsweb_secondary_color' ) );
     echo '<input type="color" name="gsweb_secondary_color" class="form-control w-25 p-0" style="width:30px!important;height:30px!important;cursor:pointer;border: 3px solid #07A6BB!important;" '.(is_null($secondaryColor)?'':' value="' . $secondaryColor .'" ').' />';
 }
+// Option to save the themes
 function gsweb_settings_theme(){
     $def_theme = esc_attr( get_option( 'gsweb_theme' ) );
     echo '<select class="form-select" aria-label="Default select example" name="gsweb_theme">
