@@ -19,12 +19,14 @@
             z-index: 8888;
             background: var(--bs-success);
             color:#fff;
-            font-size: 22px;
             width: 100%;
             max-width: 300px;
             padding: 15px;
             border-radius: 7px;
             box-shadow: 0 0 20px rgb(0 0 0 / 50%);
+        }
+        #wpcontent .notice > p > strong{
+            font-size: 18px!important;
         }
         #wpcontent .notice .notice-dismiss::before{
             color:#fff!important;
